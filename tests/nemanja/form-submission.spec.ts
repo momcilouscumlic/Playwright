@@ -25,9 +25,10 @@ test("Test Form Submission", async ({ page }) => {
 
   await page.getByTestId("textarea-bio").fill("This is a test bio.");
 
+  //Interests
   await page.getByTestId("checkbox-interest-playwright").click();
 
-  //Interests
+  //verify that the checkbox is checked
   await expect(page.getByTestId("checkbox-interest-playwright")).toBeChecked();
 
   //Account Details
@@ -40,7 +41,4 @@ test("Test Form Submission", async ({ page }) => {
 
   //Validate Success Message
   await expect(page.getByRole('heading', { name: 'Form Submitted Successfully!', level: 3 })).toBeVisible();
-  //await expect(page.locator("h3")).toHaveText("Form Submitted Successfully!");
-
-
 });

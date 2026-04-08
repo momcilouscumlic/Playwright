@@ -33,7 +33,6 @@ test('login test using POM and Locator substitution', async ({ page }) => {
  
   const login = new LoginPageUsingLocators(page);
   await login.performLoginUsinLocatorSub('/bank');
-  page.getByRole("combobox",)
 
   await expect(page).toHaveURL('/bank/dashboard');
 });
